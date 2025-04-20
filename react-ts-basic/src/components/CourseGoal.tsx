@@ -1,19 +1,20 @@
-import { ReactNode } from "react";
+import { ReactNode, PropsWithChildren } from "react";
 
-interface CourseGoalProps { // we can make it a type as well like type CourseGoalProps = { // fields }
+type CourseGoalProp = PropsWithChildren<{ // PropsWithChildren has chidren associated with the type by default
+    id: number;
     title: string;
-    children: ReactNode;
-};
+    onDelete: (id: number) => void;
+}>;
 
 //export default function CourseGoal(props: ) { // instead of props we use destructuring as shown below
-export default function CourseGoal({title, children}: CourseGoalProps) { // instead of props we use destructuring as shown below
+export default function CourseGoal({id, title, children, onDelete}: CourseGoalProps) { // instead of props we use destructuring as shown below
 
     return <article>
             <div>
                 <h2>{title}</h2>
                 {children}
             </div>   
-            <button>Delete</button>         
+            <button onClick={() => onDelete(id)}>Delete</button>         
         </article>
 
 }
