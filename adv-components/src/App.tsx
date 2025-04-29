@@ -2,10 +2,10 @@ import { useState, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Input from "./components/Input";
-import Button from "./components/Button";
-import Container from "./components/Container";
-import Form, {FormHandle} from "./components/Form";
+import Input from "./components/UI/Input";
+import Button from "./components/UI/Button";
+import Container from "./components/UI/Container";
+import Form, {FormHandle} from "./components/UI/Form";
 
 function App() {
   const [count, setCount] = useState(0);
