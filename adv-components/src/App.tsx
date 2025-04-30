@@ -2,13 +2,14 @@ import { useState, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Input from "./components/UI/Input";
-import Button from "./components/UI/Button";
-import Container from "./components/UI/Container";
+// import Input from "./components/UI/Input";
+// import Button from "./components/UI/Button";
+// import Container from "./components/UI/Container";
 import Form, {FormHandle} from "./components/UI/Form";
 import AddTimer from './components/AddTimer';
 import Header from './components/Header';
 import Timers from './components/Timers';
+import TimersContextProvider from "./store/timers-context";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -21,7 +22,7 @@ function App() {
   // }
 
   return (
-    <>
+    <TimersContextProvider>
       <Header />
       <main>
         <AddTimer />
@@ -43,7 +44,7 @@ function App() {
         */}
 
       </main>
-    </>
+    </TimersContextProvider>
   );
 }
 
